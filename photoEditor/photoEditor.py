@@ -5,7 +5,7 @@ path = "./img"                                                  # local folder f
 pathOut = "/editedImgs"                                         # local folder for edited images
 
 for filename in os.listdir(path):                               # for a given image in the first folder
-    if filename == '.DS_Store':                                 # skips .DS_Store file, which macOS creates when using finder
+    if filename == '.DS_Store':                                  # skips .DS_Store file, which macOS creates when using finder
         continue
     img = Image.open(f"{path}/{filename}")                      # open the image
     edit = img.filter(ImageFilter.EDGE_ENHANCE).convert("L")    # filter - enhance edges, convert to monochrome
